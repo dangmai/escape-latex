@@ -1,0 +1,23 @@
+{
+  "name": "escape-latex",
+  "version": "0.0.1",
+  "description": "Escape LaTeX special characters with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dangmai/escape-latex"
+  },
+  "keywords": [
+    "latex",
+    "escape"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  },
+  "author": "Dang Mai",
+  "license": "MIT"
+}
