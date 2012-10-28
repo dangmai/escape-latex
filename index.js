@@ -30,15 +30,28 @@ function escapeRegExp(str) {
  * return the escaped string, ready to be used in LaTeX.
  */
 function lescape(str) {
-    var pos, match, regexp,
+    var pos, match, regExp,
+        regExpFound = false,
         result = str;
+    // Algorithm: Find the character(s) to escape, then break the string up at
+    // that/those character(s) and repeat the process recursively.
+    // We can't just sequentially replace each character(s), because the result
+    // of an earlier step might be escaped again by a later step.
     escapeKeys.forEach(function (key, index) {
         // TODO: enhance this so as not to construct a new RegExp everytime.
-        regexp = new RegExp(escapeRegExp(key));
-        pos = str.search(regexp);
-        match = str.match(regexp);
+        if (regExpFound) {
+            // This is here to avoid breaking up strings unnecessarily: In every
+            // repetition step, we only need to find ONE special character(s) to
+            // break up the string; after it is done, there is no need to look
+            // further.
+            return;
+        }
+        regExp = new RegExp(escapeRegExp(key));
+        pos = str.search(regExp);
+        match = str.match(regExp);
         if (pos !== -1) {
             result = lescape(str.slice(0, pos)) + escapes[escapeKeys[index]] + lescape(str.slice(pos + match.length));
+            regExpFound = true;
         }
     });
     // Found nothing else to escape

@@ -42,4 +42,8 @@ suite('escape-latex', function () {
         assert.equal("pi \\textasciitilde{} 3.1416",
             escape("pi ~ 3.1416"));
     });
+    test('composite test 1', function () {
+        assert.equal("These \\{\\} should be escaped, as well as this \\textbackslash{} character",
+            escape("These {} should be escaped, as well as this \\ character"));
+    });
 });
