@@ -1,7 +1,7 @@
 escape-latex
 ============
 
-[![Build Status](https://travis-ci.org/dangmai/escape-latex.png)](https://travis-ci.org/dangmai/escape-latex.png)
+[![Build Status](https://travis-ci.org/dangmai/escape-latex.png)](https://travis-ci.org/dangmai/escape-latex)
 
 Escape LaTeX special characters with Javascript in NodeJS environment.
 
