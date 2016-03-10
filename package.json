@@ -1,6 +1,6 @@
 {
   "name": "escape-latex",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Escape LaTeX special characters with Javascript",
   "main": "index.js",
   "scripts": {
