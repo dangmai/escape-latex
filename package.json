@@ -15,8 +15,8 @@
     "escape"
   ],
   "devDependencies": {
-    "mocha": "*",
-    "chai": "*"
+    "mocha": "2.4.5",
+    "chai": "3.5.0"
   },
   "author": "Dang Mai",
   "license": "MIT"
