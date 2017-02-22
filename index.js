@@ -3,7 +3,7 @@
 
 // Map the characters to escape to their escaped values. The list is derived
 // from http://www.cespedes.org/blog/85/how-to-escape-latex-special-characters
-var escapes = {
+const escapes = {
     '{': '\\{',
     '}': '\\}',
     '\\': '\\textbackslash{}',
@@ -13,7 +13,9 @@ var escapes = {
     '&': '\\&',
     '^': '\\textasciicircum{}',
     '_': '\\_',
-    '~': '\\textasciitilde{}'
+    '~': '\\textasciitilde{}',
+    '–': '\\--',
+    '—': '\\---',
 },
     /**
      * Escape a string to be used in JS regular expression.

@@ -42,6 +42,18 @@ suite('escape-latex', function () {
         assert.equal("pi \\textasciitilde{} 3.1416",
             escape("pi ~ 3.1416"));
     });
+    test('should escape – (en-dash) correctly', function () {
+        assert.equal("en dash \\-- is cool",
+            escape("en dash – is cool"));
+    });
+    test('should escape — (em-dash) correctly', function () {
+        assert.equal("em dash \\--- is cooler",
+            escape("em dash — is cooler"));
+    });
+    test('should not escape - (hyphen)', function () {
+        assert.equal("hyphen - is the best",
+            escape("hyphen - is the best"));
+    });
     test('composite test 1', function () {
         assert.equal("These \\{\\} should be escaped, as well as this \\textbackslash{} character",
             escape("These {} should be escaped, as well as this \\ character"));
