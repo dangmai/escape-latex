@@ -3,7 +3,7 @@
 
 // Map the characters to escape to their escaped values. The list is derived
 // from http://www.cespedes.org/blog/85/how-to-escape-latex-special-characters
-const escapes = {
+var escapes = {
     '{': '\\{',
     '}': '\\}',
     '\\': '\\textbackslash{}',
