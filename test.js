@@ -54,6 +54,16 @@ suite('escape-latex', function () {
         assert.equal("hyphen - is the best",
             escape("hyphen - is the best"));
     });
+    test('stack overflow test', function () {
+        // The original algorithm of this library uses recursions to escape
+        // the string, which is prone to stack overflow if the input string
+        // contains a lot of characters that need to be escaped. This test
+        // ensures that we won't run into it in the future.
+        var numChars = 100000;
+        var str = Array(numChars).join("\\");
+        var escapedStr = Array(numChars).join("\\textbackslash{}")
+        assert.equal(escapedStr, escape(str));
+    });
     test('composite test 1', function () {
         assert.equal("These \\{\\} should be escaped, as well as this \\textbackslash{} character",
             escape("These {} should be escaped, as well as this \\ character"));
