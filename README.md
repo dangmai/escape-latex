@@ -22,9 +22,3 @@ Testing
 ```
 npm test
 ```
-
-or
-
-```
-mocha -u tdd
-```
