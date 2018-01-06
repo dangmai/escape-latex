@@ -2,6 +2,12 @@ var assert = require('chai').assert,
     escape = require('./index');
 
 suite('escape-latex', function () {
+    test('should escape empty string correctly', function () {
+        assert.equal("", escape(""));
+    })
+    test('should escape casted string correctly', function () {
+        assert.equal("1", escape(1));
+    })
     test('should escape # correctly', function () {
         assert.equal("Hashtag \\#yolo is all the rage these days \\#twitter",
             escape("Hashtag #yolo is all the rage these days #twitter"));
