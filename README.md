@@ -1,5 +1,4 @@
-escape-latex
-============
+# escape-latex
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/dangmai/escape-latex.svg)](https://greenkeeper.io/)
 
@@ -7,8 +6,7 @@ escape-latex
 
 Escape LaTeX special characters with Javascript in NodeJS (>= 4.x) environment.
 
-Usage
------
+## Usage
 
 ```javascript
 npm install escape-latex
@@ -16,8 +14,7 @@ var lescape = require('escape-latex');
 lescape("String to be escaped here #yolo");
 ```
 
-Testing
--------
+## Testing
 
 ```
 npm test
