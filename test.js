@@ -1,5 +1,6 @@
-var assert = require("chai").assert,
-  escape = require("./index");
+/* eslint-env mocha */
+var assert = require("chai").assert;
+var escape = require("./index");
 
 suite("escape-latex", function() {
   test("should escape empty string correctly", function() {

@@ -7,10 +7,20 @@
     "test": "mocha -u tdd",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
-    "precommit": "lint-staged"
+    "precommit": "eslint . && lint-staged"
   },
   "lint-staged": {
     "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended", "google", "prettier"],
+    "env": {
+      "node": "true",
+      "browser": "true"
+    },
+    "rules": {
+      "no-var": "off"
+    }
   },
   "repository": {
     "type": "git",
@@ -18,10 +28,13 @@
   },
   "keywords": ["latex", "escape"],
   "devDependencies": {
-    "mocha": "~4.1.0",
     "chai": "~4.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-prettier": "^2.9.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
+    "mocha": "~4.1.0",
     "prettier": "^1.9.2"
   },
   "author": "Dang Mai",

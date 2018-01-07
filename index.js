@@ -1,4 +1,3 @@
-/*jslint node:true*/
 "use strict";
 
 // Map the characters to escape to their escaped values. The list is derived
@@ -21,8 +20,8 @@ var escapeKeys = Object.keys(escapes); // as it is reused later on
 
 /**
  * Escape a string to be used in LaTeX documents.
- * @param str the string to be escaped.
- * @return the escaped string, ready to be used in LaTeX.
+ * @param {string} str the string to be escaped.
+ * @return {string} the escaped string, ready to be used in LaTeX.
  */
 function lescape(str) {
   var runningStr = str;
