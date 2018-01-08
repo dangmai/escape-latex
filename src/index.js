@@ -2,7 +2,7 @@
 
 // Map the characters to escape to their escaped values. The list is derived
 // from http://www.cespedes.org/blog/85/how-to-escape-latex-special-characters
-const escapes = {
+const defaultEscapes = {
   "{": "\\{",
   "}": "\\}",
   "\\": "\\textbackslash{}",
@@ -13,19 +13,36 @@ const escapes = {
   "^": "\\textasciicircum{}",
   _: "\\_",
   "~": "\\textasciitilde{}",
-  "–": "\\--",
-  "—": "\\---"
 };
-const escapeKeys = Object.keys(escapes); // as it is reused later on
+const formatEscapes = {
+  "–": "\\--",
+  "—": "\\---",
+};
+
+const defaultEscapeMapFn = (defaultEscapes, formatEscapes) =>
+  Object.assign({}, defaultEscapes, formatEscapes);
 
 /**
  * Escape a string to be used in LaTeX documents.
  * @param {string} str the string to be escaped.
+ * @param {boolean} params.preserveFormatting whether formatting escapes should
+ *  be performed (default: false).
+ * @param {function} params.escapeMapFn the function to modify the escape maps.
  * @return {string} the escaped string, ready to be used in LaTeX.
  */
-module.exports = function(str) {
+module.exports = function(
+  str,
+  { preserveFormatting = false, escapeMapFn = defaultEscapeMapFn } = {},
+) {
   let runningStr = String(str);
   let result = "";
+
+  const escapes = escapeMapFn(
+    defaultEscapes,
+    preserveFormatting ? formatEscapes : {},
+  );
+  const escapeKeys = Object.keys(escapes); // as it is reused later on
+
   // Algorithm: Go through the string character by character, if it matches
   // with one of the special characters then we'll replace it with the escaped
   // version.

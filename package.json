@@ -9,6 +9,7 @@
     "preversion": "npm test && npm build",
     "postversion": "git push && git push --tags",
     "precommit": "npm run lint && lint-staged",
+    "prettier": "prettier --write ./src/**/*.js",
     "lint": "eslint ./src",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
@@ -16,11 +17,11 @@
     "build": "babel ./src -d ./dist --ignore index.test.js"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": ["npm run prettier", "git add"]
   },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 7
+      "ecmaVersion": 8
     },
     "extends": ["eslint:recommended", "google", "prettier"],
     "env": {
@@ -38,6 +39,9 @@
         }
       ]
     ]
+  },
+  "prettier": {
+    "trailingComma": "all"
   },
   "repository": {
     "type": "git",
