@@ -2,25 +2,41 @@
   "name": "escape-latex",
   "version": "1.0.0-beta.0",
   "description": "Escape LaTeX special characters with Javascript",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "mocha -u tdd",
-    "preversion": "npm test",
+    "test": "mocha --require babel-core/register -u tdd ./src/**/*.test.js",
+    "preversion": "npm test && npm build",
     "postversion": "git push && git push --tags",
-    "precommit": "eslint . && lint-staged"
+    "precommit": "npm run lint && lint-staged",
+    "lint": "eslint ./src",
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "babel ./src -d ./dist --ignore index.test.js"
   },
   "lint-staged": {
     "*.{js,json,css,md}": ["prettier --write", "git add"]
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7
+    },
     "extends": ["eslint:recommended", "google", "prettier"],
     "env": {
-      "node": "true",
-      "browser": "true"
-    },
-    "rules": {
-      "no-var": "off"
+      "node": "true"
     }
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "4.0"
+          }
+        }
+      ]
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,6 +44,8 @@
   },
   "keywords": ["latex", "escape"],
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
     "eslint-config-google": "^0.9.1",

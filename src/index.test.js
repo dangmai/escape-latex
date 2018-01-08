@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-var assert = require("chai").assert;
-var escape = require("./index");
+const assert = require("chai").assert;
+const escape = require("./index");
 
 suite("escape-latex", function() {
   test("should escape empty string correctly", function() {
@@ -77,10 +77,10 @@ suite("escape-latex", function() {
     // the string, which is prone to stack overflow if the input string
     // contains a lot of characters that need to be escaped. This test
     // ensures that we won't run into it in the future.
-    var numChars = 100000;
-    var str = Array(numChars).join("\\");
-    var escapedStr = Array(numChars).join("\\textbackslash{}");
-    assert.equal(escapedStr, escape(str));
+    const numChars = 100000;
+    const originalStr = Array(numChars).join("\\");
+    const escapedStr = Array(numChars).join("\\textbackslash{}");
+    assert.equal(escapedStr, escape(originalStr));
   });
   test("composite test 1", function() {
     assert.equal(

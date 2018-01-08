@@ -2,7 +2,7 @@
 
 // Map the characters to escape to their escaped values. The list is derived
 // from http://www.cespedes.org/blog/85/how-to-escape-latex-special-characters
-var escapes = {
+const escapes = {
   "{": "\\{",
   "}": "\\}",
   "\\": "\\textbackslash{}",
@@ -16,7 +16,7 @@ var escapes = {
   "–": "\\--",
   "—": "\\---"
 };
-var escapeKeys = Object.keys(escapes); // as it is reused later on
+const escapeKeys = Object.keys(escapes); // as it is reused later on
 
 /**
  * Escape a string to be used in LaTeX documents.
@@ -24,13 +24,13 @@ var escapeKeys = Object.keys(escapes); // as it is reused later on
  * @return {string} the escaped string, ready to be used in LaTeX.
  */
 function lescape(str) {
-  var runningStr = str;
-  var result = "";
+  let runningStr = str;
+  let result = "";
   // Algorithm: Go through the string character by character, if it matches
   // with one of the special characters then we'll replace it with the escaped
   // version.
   while (runningStr) {
-    var specialCharFound = false;
+    let specialCharFound = false;
     escapeKeys.forEach(function(key, index) {
       if (specialCharFound) {
         return;
