@@ -23,8 +23,8 @@ const escapeKeys = Object.keys(escapes); // as it is reused later on
  * @param {string} str the string to be escaped.
  * @return {string} the escaped string, ready to be used in LaTeX.
  */
-function lescape(str) {
-  let runningStr = str;
+module.exports = function(str) {
+  let runningStr = String(str);
   let result = "";
   // Algorithm: Go through the string character by character, if it matches
   // with one of the special characters then we'll replace it with the escaped
@@ -47,8 +47,4 @@ function lescape(str) {
     }
   }
   return result;
-}
-
-module.exports = function(texString) {
-  return lescape(String(texString));
 };
