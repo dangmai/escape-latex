@@ -3,6 +3,7 @@
   "version": "1.0.0-beta.0",
   "description": "Escape LaTeX special characters with Javascript",
   "main": "./dist/index.js",
+  "files": ["dist"],
   "scripts": {
     "test": "mocha --require babel-core/register -u tdd ./src/**/*.test.js",
     "preversion": "npm test && npm build",
