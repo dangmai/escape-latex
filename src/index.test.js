@@ -64,15 +64,21 @@ suite("escape-latex", function() {
     assert.equal("pi \\textasciitilde{} 3.1416", escape("pi ~ 3.1416"));
   });
   test("should escape – (en-dash) correctly", function() {
-    assert.equal(
-      "en dash \\-- is cool",
-      escape("en dash – is cool", { preserveFormatting: true }),
-    );
+    assert.equal("\\--", escape("–", { preserveFormatting: true }));
   });
   test("should escape — (em-dash) correctly", function() {
+    assert.equal("\\---", escape("—", { preserveFormatting: true }));
+  });
+  test("should escape spaces correctly", function() {
     assert.equal(
-      "em dash \\--- is cooler",
-      escape("em dash — is cooler", { preserveFormatting: true }),
+      "Look~ma,~~multiple~spaces",
+      escape("Look ma,  multiple spaces", { preserveFormatting: true }),
+    );
+  });
+  test("should escape tabs correctly", function() {
+    assert.equal(
+      "\\qquad\\qquad",
+      escape("\t\t", { preserveFormatting: true }),
     );
   });
   test("should not preserve formatting by default", function() {
