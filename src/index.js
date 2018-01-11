@@ -38,8 +38,8 @@ module.exports = function(
   let result = "";
 
   const escapes = escapeMapFn(
-    defaultEscapes,
-    preserveFormatting ? formatEscapes : {},
+    Object.assign({}, defaultEscapes),
+    preserveFormatting ? Object.assign({}, formatEscapes) : {},
   );
   const escapeKeys = Object.keys(escapes); // as it is reused later on
 
