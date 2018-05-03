@@ -28,18 +28,6 @@
       "node": "true"
     }
   },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "4.0"
-          }
-        }
-      ]
-    ]
-  },
   "prettier": {
     "trailingComma": "all"
   },
