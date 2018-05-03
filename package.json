@@ -6,7 +6,7 @@
   "files": ["dist"],
   "scripts": {
     "test": "mocha --require babel-core/register -u tdd ./src/**/*.test.js",
-    "preversion": "npm test && npm build",
+    "preversion": "npm test && npm run build",
     "postversion": "git push && git push --tags",
     "precommit": "npm run lint && lint-staged",
     "prettier": "prettier --write ./src/**/*.js",
