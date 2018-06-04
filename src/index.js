@@ -56,7 +56,10 @@ module.exports = function(
       if (specialCharFound) {
         return;
       }
-      if (runningStr.startsWith(key)) {
+      if (
+        runningStr.length >= key.length &&
+        runningStr.slice(0, key.length) === key
+      ) {
         result += escapes[escapeKeys[index]];
         runningStr = runningStr.slice(key.length, runningStr.length);
         specialCharFound = true;
