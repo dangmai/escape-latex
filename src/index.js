@@ -19,8 +19,8 @@ const formatEscapes = {
   "—": "\\---",
   " ": "~",
   "\t": "\\qquad{}",
-  "\r\n": "\\\\newline{}",
-  "\n": "\\\\newline{}",
+  "\r\n": "\\newline{}",
+  "\n": "\\newline{}",
 };
 
 const defaultEscapeMapFn = (defaultEscapes, formatEscapes) =>

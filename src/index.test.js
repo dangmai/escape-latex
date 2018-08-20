@@ -65,19 +65,19 @@ suite("escape-latex", function() {
   });
   test("should escape *nix newline correctly", function() {
     assert.equal(
-      "\\\\newline{}\\\\newline{}",
+      "\\newline{}\\newline{}",
       escape("\n\n", { preserveFormatting: true }),
     );
   });
   test("should escape Windows newline correctly", function() {
     assert.equal(
-      "\\\\newline{}\\\\newline{}",
+      "\\newline{}\\newline{}",
       escape("\r\n\r\n", { preserveFormatting: true }),
     );
   });
   test("should escape mixed newlines correctly", function() {
     assert.equal(
-      "\\\\newline{}\\\\newline{}\\\\newline{}\\\\newline{}",
+      "\\newline{}\\newline{}\\newline{}\\newline{}",
       escape("\r\n\n\n\r\n", { preserveFormatting: true }),
     );
   });
