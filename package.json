@@ -1,6 +1,6 @@
 {
   "name": "escape-latex",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Escape LaTeX special characters with Javascript",
   "main": "./dist/index.js",
   "files": ["dist"],
