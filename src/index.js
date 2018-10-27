@@ -15,8 +15,8 @@ const defaultEscapes = {
   "~": "\\textasciitilde{}",
 };
 const formatEscapes = {
-  "–": "\\--",
-  "—": "\\---",
+  "\u2013": "\\--",
+  "\u2014": "\\---",
   " ": "~",
   "\t": "\\qquad{}",
   "\r\n": "\\newline{}",
