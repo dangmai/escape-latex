@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/dangmai/escape-latex.png)](https://travis-ci.org/dangmai/escape-latex)
 
-Escape LaTeX special characters with Javascript in NodeJS (>= 4.x) environment.
+Escape LaTeX special characters with Javascript in NodeJS (>= 8.x) environment.
 
 ## Usage
 
