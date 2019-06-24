@@ -46,7 +46,7 @@
     "eslint-config-google": "^0.13.0",
     "eslint-config-prettier": "^5.0.0",
     "husky": "^2.5.0",
-    "lint-staged": "^7.0.5",
+    "lint-staged": "^8.2.1",
     "mocha": "^6.1.4",
     "prettier": "^1.9.2"
   },
