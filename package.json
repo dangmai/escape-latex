@@ -48,7 +48,7 @@
     "chai": "^4.1.2",
     "eslint": "^6.0.0",
     "eslint-config-google": "^0.13.0",
-    "eslint-config-prettier": "^5.0.0",
+    "eslint-config-prettier": "^6.0.0",
     "husky": "^2.5.0",
     "lint-staged": "^8.2.1",
     "mocha": "^6.1.4",
