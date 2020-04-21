@@ -52,7 +52,7 @@
     "husky": "^4.0.2",
     "lint-staged": "^10.0.3",
     "mocha": "^7.0.1",
-    "prettier": "^2.0.0"
+    "prettier": "^2.0.5"
   },
   "author": "Dang Mai",
   "license": "MIT"
