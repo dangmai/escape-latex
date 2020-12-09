@@ -1,8 +1,6 @@
 # escape-latex
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/dangmai/escape-latex.svg)](https://greenkeeper.io/)
-
-[![Build Status](https://travis-ci.org/dangmai/escape-latex.png)](https://travis-ci.org/dangmai/escape-latex)
+[![Build Status](https://github.com/dangmai/escape-latex/workflows/Tests/badge.svg)](https://github.com/dangmai/escape-latex/actions?query=workflow%3A%22Tests%22)
 
 Escape LaTeX special characters with Javascript in NodeJS (>= 8.x) environment.
 
@@ -50,7 +48,7 @@ It accepts a callback function that takes in the default character escapes and t
 ```javascript
 lescape("Hello   World", {
   preseveFormatting: true,
-  escapeMapFn: function(defaultEscapes, formattingEscapes) {
+  escapeMapFn: function (defaultEscapes, formattingEscapes) {
     formattingEscapes[" "] = "\\\\";
     return Object.assign({}, defaultEscapes, formattingEscapes);
   },
@@ -66,7 +64,7 @@ npm test
 
 ## Notes
 
-* If you are updating from `escape-latex < 1.0.0`,
+- If you are updating from `escape-latex < 1.0.0`,
   the `en-dash` and `em-dash` are no longer escaped by default.
   Please use `preserveFormatting` to turn them on if necessary.
 
