@@ -6,7 +6,9 @@
   },
   "description": "Escape LaTeX special characters with Javascript",
   "main": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "mocha --require babel-core/register -u tdd ./src/**/*.test.js",
     "pretest": "npm run lint",
@@ -21,15 +23,22 @@
     "build": "babel ./src -d ./dist --ignore index.test.js"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["npm run prettier", "git add"]
+    "*.{js,json,css,md}": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 8
     },
-    "extends": ["eslint:recommended", "google", "prettier"],
+    "extends": [
+      "eslint:recommended",
+      "google",
+      "prettier"
+    ],
     "env": {
-      "node": "true"
+      "node": true
     }
   },
   "prettier": {
@@ -39,7 +48,10 @@
     "type": "git",
     "url": "https://github.com/dangmai/escape-latex"
   },
-  "keywords": ["latex", "escape"],
+  "keywords": [
+    "latex",
+    "escape"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
