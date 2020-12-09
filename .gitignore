@@ -10,6 +10,8 @@ lib-cov
 pids
 logs
 results
+coverage
+.nyc_output
 dist
 
 node_modules

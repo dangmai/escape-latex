@@ -20,6 +20,7 @@ jobs:
           - "8"
         include:
           - node: "14"
+            ENABLE_CODE_COVERAGE: true
     name: Run tests on NodeJS ${{ matrix.node }}
 
     steps:
@@ -36,3 +37,7 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Upload code coverage
+        if: matrix.ENABLE_CODE_COVERAGE
+        uses: codecov/codecov-action@v1

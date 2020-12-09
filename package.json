@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "mocha --require babel-core/register -u tdd ./src/**/*.test.js",
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha --require babel-core/register -u tdd ./src/**/*.test.js",
     "pretest": "npm run lint",
     "preversion": "npm test && npm run build",
     "postversion": "git push && git push --tags",
@@ -64,6 +64,7 @@
     "husky": "^4.0.2",
     "lint-staged": "^10.0.3",
     "mocha": "^7.0.1",
+    "nyc": "^15.1.0",
     "prettier": "^2.0.0"
   },
   "author": "Dang Mai",
