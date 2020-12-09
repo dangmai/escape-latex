@@ -34,8 +34,5 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - name: Lint source code
-        run: npm run lint
-
       - name: Run tests
         run: npm test
