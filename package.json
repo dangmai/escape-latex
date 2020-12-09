@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha --require babel-core/register -u tdd ./src/**/*.test.js",
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha --require @babel/register -u tdd ./src/**/*.test.js",
     "pretest": "npm run lint",
     "preversion": "npm test && npm run build",
     "postversion": "git push && git push --tags",
@@ -57,6 +57,7 @@
     "@babel/core": "^7.12.9",
     "@babel/plugin-transform-object-assign": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
     "chai": "^4.1.2",
     "eslint": "^7.15.0",
     "eslint-config-google": "^0.14.0",
