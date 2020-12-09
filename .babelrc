@@ -1,11 +1,11 @@
 {
-  "plugins": ["transform-object-assign"],
+  "plugins": ["@babel/transform-object-assign"],
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "targets": {
-          "node": "4.0"
+          "node": "10.0"
         }
       }
     ]
