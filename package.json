@@ -63,7 +63,7 @@
     "eslint-config-prettier": "^6.0.0",
     "husky": "^4.0.2",
     "lint-staged": "^10.0.3",
-    "mocha": "^7.0.1",
+    "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "prettier": "^2.0.0"
   },
