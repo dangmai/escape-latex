@@ -17,7 +17,6 @@ jobs:
           - "14"
           - "12"
           - "10"
-          - "8"
         include:
           - node: "14"
             ENABLE_CODE_COVERAGE: true
