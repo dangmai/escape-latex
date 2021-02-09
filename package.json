@@ -62,7 +62,7 @@
     "eslint": "^7.15.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^7.0.0",
-    "husky": "^4.0.2",
+    "husky": "^5.0.9",
     "lint-staged": "^10.0.3",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
