@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/dangmai/escape-latex/workflows/Tests/badge.svg)](https://github.com/dangmai/escape-latex/actions?query=workflow%3A%22Tests%22)
 [![codecov](https://codecov.io/gh/dangmai/escape-latex/branch/master/graph/badge.svg?token=LGfqdKlTqM)](https://codecov.io/gh/dangmai/escape-latex)
 
-Escape LaTeX special characters with Javascript in NodeJS (>= 10.x) environment.
+Escape LaTeX special characters with Javascript in NodeJS (>= 12.x) environment.
 
 ## Usage
 
