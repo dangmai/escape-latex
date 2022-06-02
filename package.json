@@ -2,7 +2,7 @@
   "name": "escape-latex",
   "version": "1.2.0",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "description": "Escape LaTeX special characters with Javascript",
   "main": "./dist/index.js",

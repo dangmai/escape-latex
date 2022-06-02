@@ -13,9 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         node:
+          - "18"
           - "16"
           - "14"
-          - "12"
         include:
           - node: "14"
             ENABLE_CODE_COVERAGE: true
