@@ -48,7 +48,7 @@ It accepts a callback function that takes in the default character escapes and t
 
 ```javascript
 lescape("Hello   World", {
-  preseveFormatting: true,
+  preserveFormatting: true,
   escapeMapFn: function (defaultEscapes, formattingEscapes) {
     formattingEscapes[" "] = "\\\\";
     return Object.assign({}, defaultEscapes, formattingEscapes);
