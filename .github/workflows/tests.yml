@@ -17,7 +17,7 @@ jobs:
           - "20"
           - "18"
         include:
-          - node: "14"
+          - node: "18"
             ENABLE_CODE_COVERAGE: true
     name: Run tests on NodeJS ${{ matrix.node }}
 
