@@ -43,3 +43,5 @@ jobs:
       - name: Upload code coverage
         if: matrix.ENABLE_CODE_COVERAGE
         uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
