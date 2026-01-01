@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "vitest --coverage",
+    "test": "vitest",
     "pretest": "pnpm run lint",
     "preversion": "pnpm test && pnpm run build",
     "postversion": "git push && git push --tags",

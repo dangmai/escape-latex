@@ -17,7 +17,7 @@ jobs:
           - "20"
           - "18"
         include:
-          - node: "18"
+          - node: "24"
             ENABLE_CODE_COVERAGE: true
     name: Run tests on NodeJS ${{ matrix.node }}
 
@@ -37,7 +37,12 @@ jobs:
       - name: Install NPM dependencies
         run: pnpm install
 
-      - name: Run tests
+      - name: Run tests with coverage
+        if: matrix.ENABLE_CODE_COVERAGE == true
+        run: pnpm test --coverage
+
+      - name: Run tests without coverage
+        if: matrix.ENABLE_CODE_COVERAGE != true
         run: pnpm test
 
       - name: Upload code coverage
