@@ -60,7 +60,7 @@ lescape("Hello   World", {
 ## Testing
 
 ```
-npm test
+pnpm test
 ```
 
 ## Notes
