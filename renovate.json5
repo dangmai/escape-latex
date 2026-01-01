@@ -1,0 +1,11 @@
+{
+  "extends": ["config:recommended"],
+  "assignees": ["dangmai"],
+  "automergeType": "branch",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
+}

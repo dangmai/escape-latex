@@ -1,4 +1,13 @@
 {
+  "json.schemas": [
+    {
+      "fileMatch": ["/renovate.json5"],
+      "url": "https://docs.renovatebot.com/renovate-schema.json"
+    }
+  ],
+  "files.associations": {
+    "*.json5": "jsonc"
+  },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
