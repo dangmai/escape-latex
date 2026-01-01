@@ -9,19 +9,19 @@ importers:
   .:
     devDependencies:
       '@babel/cli':
-        specifier: ^7.12.8
+        specifier: 7.28.3
         version: 7.28.3(@babel/core@7.28.5)
       '@babel/core':
-        specifier: ^7.12.9
+        specifier: 7.28.5
         version: 7.28.5
       '@babel/plugin-transform-object-assign':
-        specifier: ^7.12.1
+        specifier: 7.27.1
         version: 7.27.1(@babel/core@7.28.5)
       '@babel/preset-env':
-        specifier: ^7.12.7
+        specifier: 7.28.5
         version: 7.28.5(@babel/core@7.28.5)
       '@babel/register':
-        specifier: ^7.12.1
+        specifier: 7.28.3
         version: 7.28.3(@babel/core@7.28.5)
       '@biomejs/biome':
         specifier: 2.3.10
@@ -30,7 +30,7 @@ importers:
         specifier: 4.0.16
         version: 4.0.16(vitest@4.0.16)
       rimraf:
-        specifier: ^6.0.0
+        specifier: 6.1.2
         version: 6.1.2
       vitest:
         specifier: 4.0.16
