@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/complexity/useArrowFunction: We need to support ES5 browsers */
 "use strict";
 
 // Map the characters to escape to their escaped values. The list is derived
@@ -34,7 +35,7 @@ const defaultEscapeMapFn = (defaultEscapes, formatEscapes) =>
  * @param {function} params.escapeMapFn the function to modify the escape maps.
  * @return {string} the escaped string, ready to be used in LaTeX.
  */
-module.exports = function(
+module.exports = function (
   str,
   { preserveFormatting = false, escapeMapFn = defaultEscapeMapFn } = {},
 ) {
@@ -52,7 +53,7 @@ module.exports = function(
   // version.
   while (runningStr) {
     let specialCharFound = false;
-    escapeKeys.forEach(function(key, index) {
+    escapeKeys.forEach(function (key, index) {
       if (specialCharFound) {
         return;
       }

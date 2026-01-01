@@ -6,5 +6,4 @@
 .babelrc text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
-.prettierignore text eol=lf
 .editorconfig text eol=lf
