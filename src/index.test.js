@@ -1,118 +1,104 @@
-const assert = require("chai").assert;
-const escapeLatex = require("./index");
+import { describe, expect, test } from "vitest";
 
-suite("escape-latex", () => {
+import escapeLatex from "./index.js";
+
+describe("escape-latex", () => {
   test("should escape empty string correctly", () => {
-    assert.equal("", escapeLatex(""));
+    expect(escapeLatex("")).toBe("");
   });
   test("should escape casted string correctly", () => {
-    assert.equal("1", escapeLatex(1));
+    expect(escapeLatex(1)).toBe("1");
   });
   test("should escape # correctly", () => {
-    assert.equal(
-      "Hashtag \\#yolo is all the rage these days \\#twitter",
+    expect(
       escapeLatex("Hashtag #yolo is all the rage these days #twitter"),
-    );
+    ).toBe("Hashtag \\#yolo is all the rage these days \\#twitter");
   });
   test("should escape $ correctly", () => {
-    assert.equal(
+    expect(escapeLatex("$2 is greater than $1")).toBe(
       "\\$2 is greater than \\$1",
-      escapeLatex("$2 is greater than $1"),
     );
   });
   test("should escape % correctly", () => {
-    assert.equal(
+    expect(escapeLatex("100% is 20% point greater than 80%")).toBe(
       "100\\% is 20\\% point greater than 80\\%",
-      escapeLatex("100% is 20% point greater than 80%"),
     );
   });
   test("should escape & correctly", () => {
-    assert.equal(
+    expect(escapeLatex("Me & you & a dog named Boo")).toBe(
       "Me \\& you \\& a dog named Boo",
-      escapeLatex("Me & you & a dog named Boo"),
     );
   });
   test("should escape backlash correctly", () => {
-    assert.equal(
+    expect(escapeLatex("C:\\ is a good place to format")).toBe(
       "C:\\textbackslash{} is a good place to format",
-      escapeLatex("C:\\ is a good place to format"),
     );
   });
   test("should escape { correctly", () => {
-    assert.equal(
+    expect(escapeLatex("This { does not have an matching bracket")).toBe(
       "This \\{ does not have an matching bracket",
-      escapeLatex("This { does not have an matching bracket"),
     );
   });
   test("should escape } correctly", () => {
-    assert.equal(
+    expect(escapeLatex("There is no opening bracket for this }")).toBe(
       "There is no opening bracket for this \\}",
-      escapeLatex("There is no opening bracket for this }"),
     );
   });
   test("should escape ^ correctly", () => {
-    assert.equal(
+    expect(escapeLatex("2^2^2^2 = 256")).toBe(
       "2\\textasciicircum{}2\\textasciicircum{}2\\textasciicircum{}2 = 256",
-      escapeLatex("2^2^2^2 = 256"),
     );
   });
   test("should escape _ correctly", () => {
-    assert.equal(
+    expect(escapeLatex("_ is a shortcut to Underscore, e.g., _.each()")).toBe(
       "\\_ is a shortcut to Underscore, e.g., \\_.each()",
-      escapeLatex("_ is a shortcut to Underscore, e.g., _.each()"),
     );
   });
   test("should escape ~ correctly", () => {
-    assert.equal("pi \\textasciitilde{} 3.1416", escapeLatex("pi ~ 3.1416"));
+    expect(escapeLatex("pi ~ 3.1416")).toBe("pi \\textasciitilde{} 3.1416");
   });
   test("should escape *nix newline correctly", () => {
-    assert.equal(
+    expect(escapeLatex("\n\n", { preserveFormatting: true })).toBe(
       "\\newline{}\\newline{}",
-      escapeLatex("\n\n", { preserveFormatting: true }),
     );
   });
   test("should escape Windows newline correctly", () => {
-    assert.equal(
+    expect(escapeLatex("\r\n\r\n", { preserveFormatting: true })).toBe(
       "\\newline{}\\newline{}",
-      escapeLatex("\r\n\r\n", { preserveFormatting: true }),
     );
   });
   test("should escape mixed newlines correctly", () => {
-    assert.equal(
+    expect(escapeLatex("\r\n\n\n\r\n", { preserveFormatting: true })).toBe(
       "\\newline{}\\newline{}\\newline{}\\newline{}",
-      escapeLatex("\r\n\n\n\r\n", { preserveFormatting: true }),
     );
   });
   test("should escape – (en-dash) correctly", () => {
-    assert.equal("\\--", escapeLatex("–", { preserveFormatting: true }));
+    expect(escapeLatex("–", { preserveFormatting: true })).toBe("\\--");
   });
   test("should escape — (em-dash) correctly", () => {
-    assert.equal("\\---", escapeLatex("—", { preserveFormatting: true }));
+    expect(escapeLatex("—", { preserveFormatting: true })).toBe("\\---");
   });
   test("should escape spaces correctly", () => {
-    assert.equal(
-      "Look~ma,~~multiple~spaces",
+    expect(
       escapeLatex("Look ma,  multiple spaces", { preserveFormatting: true }),
-    );
+    ).toBe("Look~ma,~~multiple~spaces");
   });
   test("should escape tabs correctly", () => {
-    assert.equal(
+    expect(escapeLatex("\t\t", { preserveFormatting: true })).toBe(
       "\\qquad{}\\qquad{}",
-      escapeLatex("\t\t", { preserveFormatting: true }),
     );
   });
   test("should not preserve formatting by default", () => {
-    assert.equal("en dash – is cool", escapeLatex("en dash – is cool"));
+    expect(escapeLatex("en dash – is cool")).toBe("en dash – is cool");
   });
   test("should not escape - (hyphen)", () => {
-    assert.equal("hyphen - is the best", escapeLatex("hyphen - is the best"));
+    expect(escapeLatex("hyphen - is the best")).toBe("hyphen - is the best");
   });
   test("should escape customized character correctly", () => {
     const escapeMapFn = (defaultEscapes, formatEscapes) =>
       Object.assign({}, defaultEscapes, formatEscapes, { a: "\\a{}" });
-    assert.equal(
+    expect(escapeLatex("a is the first letter", { escapeMapFn })).toBe(
       "\\a{} is the first letter",
-      escapeLatex("a is the first letter", { escapeMapFn }),
     );
   });
   test("stack overflow test", () => {
@@ -123,12 +109,13 @@ suite("escape-latex", () => {
     const numChars = 100000;
     const originalStr = Array(numChars).join("\\");
     const escapedStr = Array(numChars).join("\\textbackslash{}");
-    assert.equal(escapedStr, escapeLatex(originalStr));
+    expect(escapeLatex(originalStr)).toBe(escapedStr);
   });
   test("composite test 1", () => {
-    assert.equal(
-      "These \\{\\} should be escaped, as well as this \\textbackslash{} character",
+    expect(
       escapeLatex("These {} should be escaped, as well as this \\ character"),
+    ).toBe(
+      "These \\{\\} should be escaped, as well as this \\textbackslash{} character",
     );
   });
 });

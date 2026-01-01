@@ -10,12 +10,12 @@
     "dist"
   ],
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha --require @babel/register -u tdd ./src/**/*.test.js",
+    "test": "vitest",
     "pretest": "pnpm run lint",
     "preversion": "pnpm test && pnpm run build",
     "postversion": "git push && git push --tags",
-    "precommit": "pnpm run lint && lint-staged",
     "lint": "biome check",
+    "lint:fix": "biome check --fix",
     "init": "mkdir dist",
     "clean": "rimraf dist",
     "prebuild": "pnpm run clean && pnpm run init",
@@ -36,10 +36,9 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/register": "^7.12.1",
     "@biomejs/biome": "2.3.10",
-    "chai": "^4.1.2",
-    "mocha": "^11.0.1",
-    "nyc": "^17.0.0",
-    "rimraf": "^6.0.0"
+    "@vitest/coverage-v8": "4.0.16",
+    "rimraf": "^6.0.0",
+    "vitest": "4.0.16"
   },
   "author": "Dang Mai",
   "license": "MIT",
