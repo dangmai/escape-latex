@@ -29,9 +29,6 @@ importers:
       chai:
         specifier: ^4.1.2
         version: 4.5.0
-      husky:
-        specifier: ^9.0.5
-        version: 9.1.7
       mocha:
         specifier: ^11.0.1
         version: 11.7.5
@@ -982,11 +979,6 @@ packages:
 
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
-
-  husky@9.1.7:
-    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
@@ -2659,8 +2651,6 @@ snapshots:
   he@1.2.0: {}
 
   html-escaper@2.0.2: {}
-
-  husky@9.1.7: {}
 
   imurmurhash@0.1.4: {}
 
