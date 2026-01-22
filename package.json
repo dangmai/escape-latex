@@ -36,9 +36,9 @@
     "@babel/preset-env": "7.28.6",
     "@babel/register": "7.28.6",
     "@biomejs/biome": "2.3.11",
-    "@vitest/coverage-v8": "4.0.17",
+    "@vitest/coverage-v8": "4.0.18",
     "rimraf": "6.1.2",
-    "vitest": "4.0.17"
+    "vitest": "4.0.18"
   },
   "author": "Dang Mai",
   "license": "MIT",
