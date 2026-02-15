@@ -35,7 +35,7 @@
     "@babel/plugin-transform-object-assign": "7.27.1",
     "@babel/preset-env": "7.29.0",
     "@babel/register": "7.28.6",
-    "@biomejs/biome": "2.3.15",
+    "@biomejs/biome": "2.4.0",
     "@vitest/coverage-v8": "4.0.18",
     "rimraf": "6.1.2",
     "vitest": "4.0.18"
