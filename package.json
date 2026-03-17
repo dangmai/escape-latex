@@ -33,7 +33,7 @@
     "@babel/cli": "7.28.6",
     "@babel/core": "7.29.0",
     "@babel/plugin-transform-object-assign": "7.27.1",
-    "@babel/preset-env": "7.29.0",
+    "@babel/preset-env": "7.29.2",
     "@babel/register": "7.28.6",
     "@biomejs/biome": "2.4.7",
     "@vitest/coverage-v8": "4.1.0",
