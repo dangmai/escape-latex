@@ -12,10 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         node:
+          - "25"
           - "24"
           - "22"
           - "20"
-          - "18"
         include:
           - node: "24"
             ENABLE_CODE_COVERAGE: true
