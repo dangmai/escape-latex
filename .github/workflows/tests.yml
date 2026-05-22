@@ -13,7 +13,6 @@ jobs:
       matrix:
         node:
           - "26"
-          - "25"
           - "24"
           - "22"
         include:
