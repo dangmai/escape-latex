@@ -1,6 +1,12 @@
 {
   "extends": ["config:recommended"],
   "assignees": ["dangmai"],
+  // Wait 3 days after a version is published before updating, to reduce supply
+  // chain attack risk. timestamp-required (currently Renovate's default, pinned
+  // here explicitly) fails closed: versions whose release timestamp is unknown
+  // are treated as not-yet-aged rather than installed.
+  "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-required",
   "automergeType": "branch",
   "lockFileMaintenance": {
     "enabled": true

@@ -1,0 +1,4 @@
+# Wait 3 days (4320 minutes) after a version is published before installing it,
+# to reduce supply chain attack risk. pnpm 11 already defaults this to 1440
+# (1 day); this raises it to match the Renovate and mise cooldowns.
+minimumReleaseAge: 4320

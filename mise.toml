@@ -1,2 +1,8 @@
 [tools]
 node = "24.16.0"
+
+[settings]
+# Ignore tool versions published less than 3 days ago to reduce supply chain
+# attack risk. Only affects fuzzy resolution (e.g. node@24, latest), not the
+# exact pin above — it's here as defense-in-depth for future/npm-backend tools.
+minimum_release_age = "3d"
