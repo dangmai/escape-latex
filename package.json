@@ -30,11 +30,11 @@
     "escape"
   ],
   "devDependencies": {
-    "@babel/cli": "7.28.6",
-    "@babel/core": "7.29.0",
-    "@babel/plugin-transform-object-assign": "7.27.1",
-    "@babel/preset-env": "7.29.5",
-    "@babel/register": "7.29.3",
+    "@babel/cli": "7.29.7",
+    "@babel/core": "7.29.7",
+    "@babel/plugin-transform-object-assign": "7.29.7",
+    "@babel/preset-env": "7.29.7",
+    "@babel/register": "7.29.7",
     "@biomejs/biome": "2.4.15",
     "@vitest/coverage-v8": "4.1.7",
     "rimraf": "6.1.3",
