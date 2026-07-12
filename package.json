@@ -30,7 +30,7 @@
     "escape"
   ],
   "devDependencies": {
-    "@babel/cli": "8.0.1",
+    "@babel/cli": "8.0.4",
     "@babel/core": "8.0.1",
     "@babel/plugin-transform-object-assign": "7.29.7",
     "@babel/preset-env": "8.0.2",
