@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "@babel/cli": "8.0.6",
-    "@babel/core": "8.0.7",
+    "@babel/core": "8.0.9",
     "@babel/plugin-transform-object-assign": "7.29.7",
     "@babel/preset-env": "8.0.7",
     "@babel/register": "8.0.6",
