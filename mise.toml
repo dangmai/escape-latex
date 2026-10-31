@@ -1,5 +1,5 @@
 [tools]
-node = "24.22.2"
+node = "26.13.0"
 
 [settings]
 # Ignore tool versions published less than 3 days ago to reduce supply chain
